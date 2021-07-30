@@ -56,7 +56,7 @@ export default inject("store")(
         skipButton = (
           <Tooltip title="Cancel (skip) task: [ Ctrl+Space ]" mouseEnterDelay={TOOLTIP_DELAY}>
             <Button disabled={disabled} look="danger" onClick={store.skipTask} className={styles.skip + " ls-skip-btn"}>
-              Skip {buttons.skip}
+              跳过 {buttons.skip}
             </Button>
           </Tooltip>
         );
@@ -72,7 +72,7 @@ export default inject("store")(
               onClick={store.submitAnnotation}
               className={styles.submit + " ls-submit-btn"}
             >
-              Submit {buttons.submit}
+              更新 {buttons.submit}
             </Button>
           </Tooltip>
         );
@@ -80,7 +80,7 @@ export default inject("store")(
 
       if ((userGenerate && sentUserGenerate) || (!userGenerate && store.hasInterface("update"))) {
         updateButton = (
-          <Tooltip title="Update this task: [ Alt+Enter ]" mouseEnterDelay={TOOLTIP_DELAY}>
+          <Tooltip title="更新任务: [ Alt+Enter ]" mouseEnterDelay={TOOLTIP_DELAY}>
             <Button
               disabled={disabled}
               look="primary"
@@ -88,7 +88,8 @@ export default inject("store")(
               onClick={store.updateAnnotation}
               className="ls-update-btn"
             >
-              {sentUserGenerate || versions.result ? "Update" : "Submit"} {buttons.update}
+              更新{buttons.update}
+              {/*{sentUserGenerate || versions.result ? "更新" : "提交"} {buttons.update}*/}
             </Button>
           </Tooltip>
         );

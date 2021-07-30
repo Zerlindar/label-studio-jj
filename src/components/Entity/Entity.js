@@ -19,7 +19,7 @@ const { Paragraph, Text } = Typography;
 const renderLabels = element => {
   return element.selectedLabels?.length ? (
     <Text key={element.pid} className={styles.labels}>
-      Labels:&nbsp;
+      标签:&nbsp;
       {element.selectedLabels.map(label => {
         const bgColor = label.background || "#000000";
 
@@ -62,7 +62,7 @@ export default observer(({ store, annotation }) => {
 
   if (node.editable && !node.classification) {
     entityButtons.push(
-      <Tooltip key="relations" placement="topLeft" title="Create Relation: [r]">
+      <Tooltip key="relations" placement="topLeft" title="创建关系: [r]">
         <Button
           aria-label="Create Relation"
           className={styles.button}
@@ -78,7 +78,7 @@ export default observer(({ store, annotation }) => {
     );
 
     entityButtons.push(
-      <Tooltip key="meta" placement="topLeft" title="Add Meta Information">
+      <Tooltip key="meta" placement="topLeft" title="添加元数据信息">
         <Button
           className={styles.button}
           onClick={() => {
@@ -92,7 +92,7 @@ export default observer(({ store, annotation }) => {
   }
 
   entityButtons.push(
-    <Tooltip key="unselect" placement="topLeft" title="Unselect: [u]">
+    <Tooltip key="unselect" placement="topLeft" title="取消选中: [u]">
       <Button
         className={styles.button}
         type="dashed"
@@ -149,7 +149,7 @@ export default observer(({ store, annotation }) => {
           </Space>
 
           {node.editable && (
-            <Tooltip placement="topLeft" title="Delete Entity: [Backspace]">
+            <Tooltip placement="topLeft" title="删除所有: [Backspace]">
               <Button
                 look="danger"
                 className={styles.button}
@@ -195,11 +195,11 @@ export default observer(({ store, annotation }) => {
               node.setNormInput(value);
             }}
             style={{ marginBottom: "0.5em" }}
-            placeholder="Meta Information"
+            placeholder="元数据信息"
           />
 
           <Button type="primary" htmlType="submit" style={{ marginRight: "0.5em" }}>
-            Add
+            添加
           </Button>
 
           <Button
@@ -212,7 +212,7 @@ export default observer(({ store, annotation }) => {
               return false;
             }}
           >
-            Cancel
+            取消
           </Button>
         </Form>
       )}

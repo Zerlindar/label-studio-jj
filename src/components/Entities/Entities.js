@@ -40,8 +40,8 @@ export default observer(({ regionStore }) => {
             regionStore.setView(e.target.value);
           }}
         >
-          <RadioGroup.Button value="regions">Regions</RadioGroup.Button>
-          <RadioGroup.Button value="labels">Labels</RadioGroup.Button>
+          <RadioGroup.Button value="regions">区域</RadioGroup.Button>
+          <RadioGroup.Button value="labels">标签</RadioGroup.Button>
         </RadioGroup>
       </Elem>
 
@@ -49,9 +49,9 @@ export default observer(({ regionStore }) => {
         <Space spread>
           <Elem name="title">
             {regionStore.view === "regions"
-              ? `${count} Region${(count === 0 || count > 1) ? "s" : ""}`
+              ? `${count}个区域`
               : regionStore.view === "labels"
-                ? "Labels"
+                ? "标签"
                 : null}
           </Elem>
 
@@ -68,23 +68,23 @@ export default observer(({ regionStore }) => {
               />
             ) : null}
 
-            {regionStore.view === "regions" && count > 0 && (
-              <Dropdown overlay={<SortMenu regionStore={regionStore} />} placement="bottomLeft">
-                <Elem name="sort" onClick={e => e.preventDefault()}>
-                  <SortAscendingOutlined /> Sort
-                </Elem>
-              </Dropdown>
-            )}
+            {/*{regionStore.view === "regions" && count > 0 && (*/}
+            {/*<Dropdown overlay={<SortMenu regionStore={regionStore} />} placement="bottomLeft">*/}
+            {/*<Elem name="sort" onClick={e => e.preventDefault()}>*/}
+            {/*<SortAscendingOutlined /> 排序*/}
+            {/*</Elem>*/}
+            {/*</Dropdown>*/}
+            {/*)}*/}
           </Space>
         </Space>
       </Elem>
 
       <Oneof value={regionStore.view}>
         <Elem name="regions" case="regions">
-          {count ? <RegionTree regionStore={regionStore} /> : <Elem name="empty">No Regions created yet</Elem>}
+          {count ? <RegionTree regionStore={regionStore} /> : <Elem name="empty">尚未创建区域</Elem>}
         </Elem>
         <Elem name="labels" case="labels">
-          {count ? <LabelList regionStore={regionStore} /> : <Elem name="empty">No Labeled Regions created yet</Elem>}
+          {count ? <LabelList regionStore={regionStore} /> : <Elem name="empty">尚未创建标记区域</Elem>}
         </Elem>
       </Oneof>
     </Block>

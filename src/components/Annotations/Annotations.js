@@ -145,7 +145,7 @@ const Annotation = observer(({ item, store }) => {
         {store.hasInterface("ground-truth") && (item.ground_truth ? removeHoney() : setHoney())}
         &nbsp;
         {store.hasInterface("annotations:delete") && (
-          <Tooltip placement="topLeft" title="Delete selected annotation">
+          <Tooltip placement="topLeft" title="删除选中标注信息">
             <Popconfirm
               placement="bottomLeft"
               title={"Please confirm you want to delete this annotation"}

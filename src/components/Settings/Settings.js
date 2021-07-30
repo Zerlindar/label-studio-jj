@@ -7,8 +7,8 @@ import { Hotkey } from "../../core/Hotkey";
 const HotkeysDescription = () => {
   const descr = Hotkey.keysDescipritions();
   const columns = [
-    { title: "Key", dataIndex: "key", key: "key" },
-    { title: "Description", dataIndex: "descr", key: "descr" },
+    { title: "按键", dataIndex: "key", key: "key" },
+    { title: "描述", dataIndex: "descr", key: "descr" },
   ];
 
   const data = Object.keys(descr)
@@ -35,7 +35,7 @@ export default observer(({ store }) => {
               store.settings.toggleHotkeys();
             }}
           >
-            Enable labeling hotkeys
+            使用标注快捷键
           </Checkbox>
           <br />
           <Checkbox
@@ -44,7 +44,7 @@ export default observer(({ store }) => {
               store.settings.toggleTooltips();
             }}
           >
-            Show hotkey tooltips
+            显示快捷键提示
           </Checkbox>
           <br />
           <Checkbox
@@ -53,7 +53,7 @@ export default observer(({ store }) => {
               store.settings.toggleLabelTooltips();
             }}
           >
-            Show labels hotkey tooltips
+            显示标签快捷工具提示
           </Checkbox>
           <br />
           <Checkbox
@@ -62,7 +62,7 @@ export default observer(({ store }) => {
               store.settings.toggleShowLabels();
             }}
           >
-            Show labels inside the regions
+            显示区域内的标签
           </Checkbox>
           {/* <br/> */}
           {/* <Checkbox */}
@@ -82,17 +82,17 @@ export default observer(({ store }) => {
               store.settings.toggleContinuousLabeling();
             }}
           >
-            Keep label selected after creating a region
+            在创建区域后保持选中标签
           </Checkbox>
 
           <br />
           <Checkbox checked={store.settings.selectAfterCreate} onChange={store.settings.toggleSelectAfterCreate}>
-            Select regions after creating
+            创建后选择区域
           </Checkbox>
 
           <br />
           <Checkbox checked={store.settings.showLineNumbers} onChange={store.settings.toggleShowLineNumbers}>
-            Show line numbers for Text
+            显示文本的行号
           </Checkbox>
 
           {/* <br /> */}
@@ -121,12 +121,12 @@ export default observer(({ store }) => {
               store.settings.toggleBottomSP();
             }}
           >
-            Move sidepanel to the bottom
+            把侧边栏移到底部
           </Checkbox>
 
           <br />
           <Checkbox checked={store.settings.displayLabelsByDefault} onChange={store.settings.toggleSidepanelModel}>
-            Display Labels by default in Results panel
+            在结果面板中默认显示标签
           </Checkbox>
 
           <br />
@@ -137,18 +137,18 @@ export default observer(({ store }) => {
               store.settings.toggleAnnotationsPanel();
             }}
           >
-            Show Annotations panel
+            显示标注面板
           </Checkbox>
-          <br />
-          <Checkbox
-            value="Show Predictions panel"
-            defaultChecked={store.settings.showPredictionsPanel}
-            onChange={() => {
-              store.settings.togglePredictionsPanel();
-            }}
-          >
-            Show Predictions panel
-          </Checkbox>
+          {/*<br />*/}
+          {/*<Checkbox*/}
+          {/*value="Show Predictions panel"*/}
+          {/*defaultChecked={store.settings.showPredictionsPanel}*/}
+          {/*onChange={() => {*/}
+          {/*store.settings.togglePredictionsPanel();*/}
+          {/*}}*/}
+          {/*>*/}
+          {/*Show Predictions panel*/}
+          {/*</Checkbox>*/}
 
           {/* <br/> */}
           {/* <Checkbox */}

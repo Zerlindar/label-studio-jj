@@ -8,7 +8,7 @@ import "./HistoryActions.styl";
 export const HistoryActions = observer(({ history }) => {
   return (
     <Block name="history">
-      <Tooltip title="Undo">
+      <Tooltip title="撤销">
         <Elem
           tag={Button}
           name="action"
@@ -19,7 +19,7 @@ export const HistoryActions = observer(({ history }) => {
           icon={<LsUndo />}
         />
       </Tooltip>
-      <Tooltip title="Redo">
+      <Tooltip title="重做">
         <Elem
           tag={Button}
           name="action"
@@ -30,7 +30,7 @@ export const HistoryActions = observer(({ history }) => {
           icon={<LsRedo />}
         />
       </Tooltip>
-      <Tooltip title="Reset">
+      <Tooltip title="重置">
         <Elem
           tag={Button}
           name="action"

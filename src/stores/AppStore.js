@@ -183,17 +183,17 @@ export default types
       /**
        * Hotkey for submit
        */
-      if (self.hasInterface("submit")) hotkeys.addKey("ctrl+enter", self.submitAnnotation, "Submit a task");
+      if (self.hasInterface("submit")) hotkeys.addKey("ctrl+enter", self.submitAnnotation, "提交任务");
 
       /**
        * Hotkey for skip task
        */
-      if (self.hasInterface("skip")) hotkeys.addKey("ctrl+space", self.skipTask, "Skip a task");
+      if (self.hasInterface("skip")) hotkeys.addKey("ctrl+space", self.skipTask, "跳过");
 
       /**
        * Hotkey for update annotation
        */
-      if (self.hasInterface("update")) hotkeys.addKey("alt+enter", self.updateAnnotation, "Update a task");
+      if (self.hasInterface("update")) hotkeys.addKey("alt+enter", self.updateAnnotation, "更新任务");
 
       /**
        * Hotkey for delete
@@ -206,7 +206,7 @@ export default types
             selected.deleteAllRegions();
           }
         },
-        "Delete all regions",
+        "删除所有区域",
       );
 
       // create relation
@@ -218,7 +218,7 @@ export default types
             c.startRelationMode(c.highlightedNode);
           }
         },
-        "Create relation when region is selected",
+        "选择区域时创建关系",
       );
 
       // unselect region
@@ -256,7 +256,7 @@ export default types
             c.regionStore.unselectAll();
           }
         },
-        "Unselect region, exit relation mode",
+        "取消选择区域，退出关系模式",
       );
 
       hotkeys.addKey(
@@ -267,7 +267,7 @@ export default types
             c.highlightedNode.deleteRegion();
           }
         },
-        "Delete selected region",
+        "删除选中区域",
       );
 
       hotkeys.addKey(

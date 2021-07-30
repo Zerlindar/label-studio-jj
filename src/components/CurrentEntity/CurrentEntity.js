@@ -30,12 +30,13 @@ export const CurrentEntity = injector(observer(({
     <Block name="annotation" onClick={e => e.stopPropagation()}>
       <Elem name="info" tag={Space} spread>
         <Space size="small">
-          ID: {entity.pk ?? entity.id}
-          {showGroundTruth && <GroundTruth entity={entity}/>}
+          ID: {store.task.id}
+          {/*ID: {entity.id || entity.pk}*/}
+          {/*{showGroundTruth && <GroundTruth entity={entity}/>}*/}
         </Space>
 
         {store.hasInterface("annotations:add-new") && saved && (
-          <Tooltip title={`Create copy of this ${entity.type}`}>
+          <Tooltip title={`创建${entity.type}的副本`}>
             <Button size="small" look="ghost" onClick={(ev) => {
               ev.preventDefault();
 
@@ -47,7 +48,7 @@ export const CurrentEntity = injector(observer(({
                 store.annotationStore.selectAnnotation(c.id);
               }, 50);
             }}>
-              Create Copy
+              创建副本
             </Button>
           </Tooltip>
         )}
@@ -62,7 +63,7 @@ export const CurrentEntity = injector(observer(({
 
         <Space size="small" align="flex-end" collapsed>
           {canDelete && (
-            <Tooltip title="Delete annotation">
+            <Tooltip title="删除所有标注并提交">
               <Button
                 icon={<LsTrash />}
                 look="danger"

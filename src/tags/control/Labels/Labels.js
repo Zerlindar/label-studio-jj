@@ -105,7 +105,7 @@ const Model = LabelMixin.views(self => ({
       }
     }
 
-    InfoModal.warning(self.requiredmessage || `Labels "${self.name}" were not used.`);
+    InfoModal.warning(self.requiredmessage || `标签 "${self.name}" 没有被使用。`);
     return false;
   },
 }));
