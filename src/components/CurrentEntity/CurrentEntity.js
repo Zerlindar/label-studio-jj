@@ -71,10 +71,11 @@ export const CurrentEntity = injector(observer(({
                 aria-label="Delete"
                 onClick={() => {
                   confirm({
-                    title: "Delete annotaion",
-                    body: "This action cannot be undone",
+                    title: "删除标注信息",
+                    body: "此操作不可撤销",
                     buttonLook: "destructive",
-                    okText: "Proceed",
+                    cancelText: '取消',
+                    okText: "确定",
                     onOk: () => entity.list.deleteAnnotation(entity),
                   });
                 }}

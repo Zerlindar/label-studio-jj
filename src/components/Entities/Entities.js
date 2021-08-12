@@ -67,7 +67,6 @@ export default observer(({ regionStore }) => {
                 icon={regionStore.isAllHidden ? <EyeInvisibleOutlined /> : <EyeOutlined />}
               />
             ) : null}
-
             {/*{regionStore.view === "regions" && count > 0 && (*/}
             {/*<Dropdown overlay={<SortMenu regionStore={regionStore} />} placement="bottomLeft">*/}
             {/*<Elem name="sort" onClick={e => e.preventDefault()}>*/}

@@ -45,13 +45,15 @@ export const Controls = inject("store")(observer(({store, annotation}) => {
         </Button>
       </ButtonTooltip>
     );
-  } else if (annotation.skipped) {
-    buttons.push(
-      <Elem name="skipped-info" key="skipped">
-        <IconBan color="#d00" />
-      </Elem>
-    );
-  } else {
+  }
+  // else if (annotation.skipped) {
+  //   buttons.push(
+  //     <Elem name="skipped-info" key="skipped">
+  //       <IconBan color="#d00" />
+  //     </Elem>
+  //   );
+  // }
+  else {
     if (store.hasInterface("skip")) {
       buttons.push(
         <ButtonTooltip key="skip" title="取消 (跳过) 当前任务: [ Ctrl+Space ]">
