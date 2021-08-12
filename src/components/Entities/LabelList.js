@@ -4,7 +4,7 @@ import { Tree } from "antd";
 import { LabelItem } from "./LabelItem";
 import { RegionItem } from "./RegionItem";
 import { observer } from "mobx-react";
-
+// TODO: label区域更改
 export const LabelList = observer(({ regionStore }) => {
   const treeData = regionStore.asLabelsTree((item, idx, isLabel, children) => {
     return {
@@ -16,7 +16,6 @@ export const LabelList = observer(({ regionStore }) => {
       ),
     };
   });
-
   return (
     <Tree
       className={styles.treelabels}

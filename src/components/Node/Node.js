@@ -91,7 +91,7 @@ const Node = observer(({ className, node }) => {
 
   return (
     <span className={[styles.node, className].filter(Boolean).join(" ")}>
-      <Icon />
+      {/*<Icon />*/}
       {getContent(node)}
     </span>
   );
@@ -109,9 +109,9 @@ const NodeMinimal = observer(({ node }) => {
     <Block name="node-minimal" tag="span">
       {index >= 0 && <Elem name="counter">{index + 1}</Elem>}
 
-      <Elem name="icon" tag={Icon}/>
+      {/*<Elem name="icon" tag={Icon}/>*/}
 
-      {text}
+      {/*{text}*/}
     </Block>
   );
 });
